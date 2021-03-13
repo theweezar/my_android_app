@@ -5,4 +5,15 @@
     <string name="man_hinh_1">Màn Hình 1</string>
     <string name="man_hinh_2_textview">Đây là màn hình 2</string>
     <string name="btnBack">Quay lại</string>
+    <string name="todo">TODO</string>
+    <string name="to">To</string>
+    <string name="message">Message</string>
+
+    <string name="send">SEND</string>
+    <string name="input">Input</string>
+    <string name="tai_khoan">Tai khoan</string>
+    <string name="mat_khau">Mat khau</string>
+    <string name="ngay_sinh">Ngay sinh</string>
+    <string name="email">Email</string>
+    <string name="submit">Submit</string>
 </resources>
