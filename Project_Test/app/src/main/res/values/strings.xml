@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Project_Test</string>
+    <string name="man_hinh_2">Màn Hình 2</string>
+    <string name="man_hinh_chinh_textview">Đây là màn hình chính</string>
+    <string name="man_hinh_1">Màn Hình 1</string>
+    <string name="man_hinh_2_textview">Đây là màn hình 2</string>
+    <string name="btnBack">Quay lại</string>
+</resources>
