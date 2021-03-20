@@ -8,12 +8,22 @@
     <string name="todo">TODO</string>
     <string name="to">To</string>
     <string name="message">Message</string>
-
     <string name="send">SEND</string>
     <string name="input">Input</string>
-    <string name="tai_khoan">Tai khoan</string>
-    <string name="mat_khau">Mat khau</string>
-    <string name="ngay_sinh">Ngay sinh</string>
+    <string name="tai_khoan">Tài khoản</string>
+    <string name="mat_khau">Mật khẩu</string>
+    <string name="ngay_sinh">Ngày sinh</string>
     <string name="email">Email</string>
     <string name="submit">Submit</string>
+    <string name="name">Tên</string>
+    <string name="exit">Thoát</string>
+    <string name="dangnhapvaohethong">Đăng nhập vào hệ thống</string>
+    <string name="cscom">CSCOM</string>
+    <string name="luuthongtindangnhap">Lưu thông tin đăng nhập</string>
+    <string name="tong2so">Tổng hai số</string>
+    <string name="nhapsoa">Nhập số a:</string>
+    <string name="nhapsob">Nhập số b:</string>
+    <string name="nothing">Nothing</string>
+    <string name="sum">Tổng</string>
+    <string name="clear">Xóa trắng</string>
 </resources>
