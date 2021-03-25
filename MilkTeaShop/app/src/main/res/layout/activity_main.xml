@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#009dff">
+
+        <ImageView
+            android:id="@+id/more_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="@string/appbar_scrolling_view_behavior"
+            android:src="@drawable/ic_baseline_reorder_32"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/insert_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="15dp"
+            android:contentDescription="@string/appbar_scrolling_view_behavior"
+            android:src="@drawable/ic_baseline_add_32"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/drinkTitle"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+    </FrameLayout>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="20dp"
+        android:paddingVertical="10dp"
+        android:background="@drawable/border_gray_shape"
+        >
+        <TableRow android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:id="@+id/inserted_number"
+                android:gravity="center_horizontal"
+                android:text="@string/insertedQuantity"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/stopped_number"
+                android:gravity="center_horizontal"
+                android:text="@string/stoppedQuantity"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+        </TableRow>
+
+        <TableRow android:gravity="center_horizontal">
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:text="@string/insertedTitle"
+                android:textSize="20sp"
+                android:paddingHorizontal="35dp"/>
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:text="@string/stoppedTitle"
+                android:textSize="20sp"
+                android:paddingHorizontal="35dp"/>
+        </TableRow>
+    </TableLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/sort_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/sort_button"
+            tools:ignore="RtlHardcoded" />
+
+        <include
+            android:id="@+id/sort_menu"
+            layout="@layout/sort_by_menu" />
+
+
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

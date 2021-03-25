@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MilkTeaShop</string>
+    <string name="drinkTitle">Drink</string>
+    <string name="insertedTitle">Inserted</string>
+    <string name="insertedQuantity">0</string>
+    <string name="stoppedTitle">Stopped</string>
+    <string name="stoppedQuantity">0</string>
+    <string name="sort_button">Sort by</string>
+    <string name="alphabet_button">Alphabet</string>
+    <string name="sort_date_btn">Date</string>
+    <string name="sort_asc_btn">Ascending</string>
+    <string name="desc_sort_btn">Descending</string>
+</resources>
