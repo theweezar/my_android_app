@@ -26,4 +26,11 @@
     <string name="nothing">Nothing</string>
     <string name="sum">Tổng</string>
     <string name="clear">Xóa trắng</string>
+    <string name="subject_1">Lập trình ứng dụng Android</string>
+    <string name="title_1">Chọn thành viên</string>
+    <string name="mem_1">Hoàng Phan Minh Đức</string>
+    <string name="mem_2">Dương Trực Đông</string>
+    <string name="mem_3">Phan Đại</string>
+    <string name="mem_4">Lê Đức Minh</string>
+    <string name="test_connection">Test Connection</string>
 </resources>

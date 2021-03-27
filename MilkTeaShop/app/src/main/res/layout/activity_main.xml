@@ -76,13 +76,13 @@
             <TextView
                 android:gravity="center_horizontal"
                 android:text="@string/insertedTitle"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:paddingHorizontal="35dp"/>
 
             <TextView
                 android:gravity="center_horizontal"
                 android:text="@string/stoppedTitle"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:paddingHorizontal="35dp"/>
         </TableRow>
     </TableLayout>
@@ -96,17 +96,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/sort_button"
+            android:layout_marginHorizontal="10dp"
+            android:text="@string/sortBtn"
+            android:textSize="20sp"
             tools:ignore="RtlHardcoded" />
-
-        <include
-            android:id="@+id/sort_menu"
-            layout="@layout/sort_by_menu" />
-
-
-
 
     </FrameLayout>
 
