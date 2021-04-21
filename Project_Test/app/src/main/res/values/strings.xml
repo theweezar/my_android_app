@@ -33,4 +33,17 @@
     <string name="mem_3">Phan Đại</string>
     <string name="mem_4">Lê Đức Minh</string>
     <string name="test_connection">Test Connection</string>
+    <string name="toggle_on">Bật</string>
+    <string name="toggle_off">Tắt</string>
+    <string name="them">Thêm</string>
+    <string name="edit">Sửa</string>
+    <string name="xoa">Xóa</string>
+    <string name="xoatrang">Xóa trắng</string>
+    <string-array name="string_array_1">
+        <item>HP</item>
+        <item>Dell</item>
+        <item>Lenovo</item>
+        <item>Acer</item>
+        <item>MSI</item>
+    </string-array>
 </resources>

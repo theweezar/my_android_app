@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="40dp">
+
+    <Button
+        android:id="@+id/phongban_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phong_ban_btn" />
+
+    <Button
+        android:id="@+id/nhanvien_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nhan_vien_btn" />
+
+    <Button
+        android:id="@+id/vanphongpham_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/van_phong_pham_btn" />
+
+    <Button
+        android:id="@+id/phieucapphat_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cap_phat_btn" />
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GiuaKi</string>
+    <string name="phong_ban_btn">Phòng ban</string>
+    <string name="nhan_vien_btn">Nhân viên</string>
+    <string name="van_phong_pham_btn">Văn phòng phẩm</string>
+    <string name="cap_phat_btn">Phiếu cấp phát</string>
+    <string name="ma_phong_ban">Mã phòng ban</string>
+    <string name="ten_phong_ban">Tên phòng ban</string>
+    <string name="insert">Thêm</string>
+    <string name="list">Danh sách</string>
+    <string name="id">ID</string>
+    <string name="thong_tin">Thông tin</string>
+    <string name="reload">Tải danh sách</string>
+</resources>
