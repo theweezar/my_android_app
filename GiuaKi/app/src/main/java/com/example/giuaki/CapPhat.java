@@ -2,18 +2,27 @@ package com.example.giuaki;
 
 public class CapPhat {
 
-    private String id;
+    private long id;
     private String soPhieu;
     private String ngayCap;
     private String maVpp;
     private String maNv;
-    private String sl;
+    private long sl;
 
-    public String getId() {
+    public CapPhat(long id, String soPhieu, String ngayCap, String maVpp, String maNv, long sl) {
+        this.id = id;
+        this.soPhieu = soPhieu;
+        this.ngayCap = ngayCap;
+        this.maVpp = maVpp;
+        this.maNv = maNv;
+        this.sl = sl;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -49,11 +58,11 @@ public class CapPhat {
         this.maNv = maNv;
     }
 
-    public String getSl() {
+    public long getSl() {
         return sl;
     }
 
-    public void setSl(String sl) {
+    public void setSl(long sl) {
         this.sl = sl;
     }
 }

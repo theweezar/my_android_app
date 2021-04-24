@@ -73,10 +73,14 @@ public class PhongBanActivity extends AppCompatActivity {
         reload_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<PhongBan> list_phongban = new ArrayList<>();
-                list_phongban = phongbandb.select();
+                List<PhongBan> list_phongban = phongbandb.select();
+
                 for(int i = 0; i < list_phongban.size(); i++){
                     TableRow row = new TableRow(PhongBanActivity.this);
+
+                    row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
+                            TableRow.LayoutParams.WRAP_CONTENT));
+
                     row.addView(renderIdColumn(list_phongban.get(i).getId()));
                     row.addView(renderInforColumn(
                             String.format("%s\n%s", list_phongban.get(i).getMapb(), list_phongban.get(i).getTenpb())
@@ -90,30 +94,30 @@ public class PhongBanActivity extends AppCompatActivity {
 
     @SuppressLint({"DefaultLocale", "UseCompatLoadingForDrawables"})
     public TextView renderIdColumn(long id){
-        TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(
+        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
                 TableRow.LayoutParams.WRAP_CONTENT,
                 TableRow.LayoutParams.WRAP_CONTENT
         );
-        TextView id_view = new TextView(this);
-        id_view.setLayoutParams(layoutParams);
+        TextView id_view = new TextView(PhongBanActivity.this);
         id_view.setText(String.format("%d",id));
         id_view.setPadding(5,0,5,0);
         id_view.setBackground(getResources().getDrawable(R.drawable.border_black_shape_rectangle_noradius));
+        id_view.setLayoutParams(layoutParams);
         return id_view;
     }
 
     @SuppressLint({"DefaultLocale", "UseCompatLoadingForDrawables"})
     public TextView renderInforColumn(String infor){
-        TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(
+        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(
                 TableRow.LayoutParams.WRAP_CONTENT,
                 TableRow.LayoutParams.WRAP_CONTENT,
-                1.0f
+                1
         );
-        TextView id_view = new TextView(this);
-        id_view.setLayoutParams(layoutParams);
+        TextView id_view = new TextView(PhongBanActivity.this);
         id_view.setText(infor);
         id_view.setPadding(5,0,5,0);
         id_view.setBackground(getResources().getDrawable(R.drawable.border_black_shape_rectangle_noradius));
+        id_view.setLayoutParams(layoutParams);
         return id_view;
     }
 }

@@ -2,17 +2,25 @@ package com.example.giuaki;
 
 public class NhanVien {
 
-    private String id;
+    private long id;
     private String maNv;
     private String hoTen;
     private String ngaySinh;
     private String maPb;
 
-    public String getId() {
+    public NhanVien(long id, String maNv, String hoTen, String ngaySinh, String maPb) {
+        this.id = id;
+        this.maNv = maNv;
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.maPb = maPb;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
