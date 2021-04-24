@@ -1,5 +1,6 @@
 package com.example.giuaki;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,10 +22,10 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "CAPPHAT";
 
     public static final String COLUMN_ID ="ID";
-    public static final String COLUMN_SOPHIEU ="MANV";
-    public static final String COLUMN_NGAYCAP = "HOTEN";
-    public static final String COLUMN_MAVPP = "NGAYSINH";
-    public static final String COLUMN_MANV = "MAPB";
+    public static final String COLUMN_SOPHIEU ="SOPHIEU";
+    public static final String COLUMN_NGAYCAP = "NGAYCAP";
+    public static final String COLUMN_MAVPP = "MAVPP";
+    public static final String COLUMN_MANV = "MANV";
     public static final String COLUMN_SOLUONG = "SOLUONG";
 
     public CapPhatDatabase(Context context)  {
@@ -34,7 +35,7 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Script to create table.
-        String script = "CREATE TABLE " + TABLE_NAME + "("
+        String script = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                 + COLUMN_SOPHIEU + " TEXT NOT NULL UNIQUE,"
                 + COLUMN_NGAYCAP + " TEXT NOT NULL,"
@@ -51,6 +52,22 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         // Recreate
         onCreate(db);
+    }
+
+    public void insert(CapPhat capPhat){
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_SOPHIEU, capPhat.getSoPhieu());
+        values.put(COLUMN_NGAYCAP, capPhat.getNgayCap());
+        values.put(COLUMN_MAVPP, capPhat.getMaVpp());
+        values.put(COLUMN_MANV, capPhat.getMaNv());
+        values.put(COLUMN_SOLUONG, capPhat.getSl());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(TABLE_NAME, null, values);
     }
 
     public List<CapPhat> select(){

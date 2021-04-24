@@ -2,17 +2,27 @@ package com.example.giuaki;
 
 public class VanPhongPham {
 
-    private String id;
+    private long id;
     private String maVpp;
     private String tenVpp;
     private String dvt;
     private String giaNhap;
+    private byte[] hinh;
 
-    public String getId() {
+    public VanPhongPham(long id, String maVpp, String tenVpp, String dvt, String giaNhap, byte[] hinh) {
+        this.id = id;
+        this.maVpp = maVpp;
+        this.tenVpp = tenVpp;
+        this.dvt = dvt;
+        this.giaNhap = giaNhap;
+        this.hinh = hinh;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -46,5 +56,13 @@ public class VanPhongPham {
 
     public void setGiaNhap(String giaNhap) {
         this.giaNhap = giaNhap;
+    }
+
+    public byte[] getHinh() {
+        return hinh;
+    }
+
+    public void setHinh(byte[] hinh) {
+        this.hinh = hinh;
     }
 }

@@ -34,7 +34,7 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Script to create table.
-        String script = "CREATE TABLE " + TABLE_NAME + "("
+        String script = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                 + COLUMN_MANV + " TEXT NOT NULL UNIQUE,"
                 + COLUMN_HOTEN + " TEXT NOT NULL,"
