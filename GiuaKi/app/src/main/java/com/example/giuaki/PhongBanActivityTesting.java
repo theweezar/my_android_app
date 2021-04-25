@@ -3,7 +3,6 @@ package com.example.giuaki;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,22 +12,21 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class PhongBanActivity extends AppCompatActivity {
+public class PhongBanActivityTesting extends AppCompatActivity {
 
     Button insert_btn;
     EditText mapb_input;
     EditText tenpb_input;
     TableLayout table_list;
     Button reload_btn;
-    PhongBanDatabase phongbandb = new PhongBanDatabase(PhongBanActivity.this);
+    PhongBanDatabase phongbandb = new PhongBanDatabase(PhongBanActivityTesting.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phong_ban);
+        setContentView(R.layout.activity_phong_ban_testing);
         setControl();
         setEventForInsertBtn();
         setEventForReloadBtn();
@@ -50,18 +48,18 @@ public class PhongBanActivity extends AppCompatActivity {
                 String tenpb = tenpb_input.getText().toString().trim();
 
                 if (mapb.isEmpty()){
-                    Toast.makeText(PhongBanActivity.this, "Nhập mã phòng ban", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PhongBanActivityTesting.this, "Nhập mã phòng ban", Toast.LENGTH_SHORT).show();
                 }
                 else if (tenpb.isEmpty()){
-                    Toast.makeText(PhongBanActivity.this, "Nhập tên phòng ban", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PhongBanActivityTesting.this, "Nhập tên phòng ban", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     try{
                         phongbandb.insert(new PhongBan(mapb, tenpb));
-                        Toast.makeText(PhongBanActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PhongBanActivityTesting.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
                     }
                     catch (Exception e){
-                        Toast.makeText(PhongBanActivity.this, "Lỗi sqlite", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PhongBanActivityTesting.this, "Lỗi sqlite", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -76,7 +74,7 @@ public class PhongBanActivity extends AppCompatActivity {
                 List<PhongBan> list_phongban = phongbandb.select();
 
                 for(int i = 0; i < list_phongban.size(); i++){
-                    TableRow row = new TableRow(PhongBanActivity.this);
+                    TableRow row = new TableRow(PhongBanActivityTesting.this);
 
                     row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
                             TableRow.LayoutParams.WRAP_CONTENT));
@@ -87,7 +85,7 @@ public class PhongBanActivity extends AppCompatActivity {
                     ));
                     table_list.addView(row);
                 }
-                Toast.makeText(PhongBanActivity.this,"List's length: " + list_phongban.size(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhongBanActivityTesting.this,"List's length: " + list_phongban.size(),Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -98,7 +96,7 @@ public class PhongBanActivity extends AppCompatActivity {
                 TableRow.LayoutParams.WRAP_CONTENT,
                 TableRow.LayoutParams.WRAP_CONTENT
         );
-        TextView id_view = new TextView(PhongBanActivity.this);
+        TextView id_view = new TextView(PhongBanActivityTesting.this);
         id_view.setText(String.format("%d",id));
         id_view.setPadding(5,0,5,0);
         id_view.setBackground(getResources().getDrawable(R.drawable.border_black_shape_rectangle_noradius));
@@ -113,7 +111,7 @@ public class PhongBanActivity extends AppCompatActivity {
                 TableRow.LayoutParams.WRAP_CONTENT,
                 1
         );
-        TextView id_view = new TextView(PhongBanActivity.this);
+        TextView id_view = new TextView(PhongBanActivityTesting.this);
         id_view.setText(infor);
         id_view.setPadding(5,0,5,0);
         id_view.setBackground(getResources().getDrawable(R.drawable.border_black_shape_rectangle_noradius));

@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setControl();
         setEventPhongBan();
+        setEventNhanVien();
+        setEventVanPhongPham();
     }
 
     public void setControl(){
@@ -33,7 +35,27 @@ public class MainActivity extends AppCompatActivity {
         phongban_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PhongBanActivity.class);
+                Intent intent = new Intent(MainActivity.this, InsertPhongBanActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void setEventNhanVien(){
+        nhanvien_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InsertNhanVienActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void setEventVanPhongPham(){
+        vanphongpham_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InsertVppActivity.class);
                 startActivity(intent);
             }
         });

@@ -15,7 +15,7 @@ public class PhongBanDatabase extends SQLiteOpenHelper {
     private static final String TAG = "SQLite";
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     // Database Name
     private static final String DATABASE_NAME = "GiuaKi";
@@ -35,7 +35,8 @@ public class PhongBanDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Script to create table.
         String script = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," + COLUMN_MAPB + " TEXT NOT NULL UNIQUE,"
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
+                + COLUMN_MAPB + " TEXT NOT NULL UNIQUE,"
                 + COLUMN_TENPB + " TEXT NOT NULL" + ")";
         // Execute script.
         db.execSQL(script);
@@ -87,7 +88,7 @@ public class PhongBanDatabase extends SQLiteOpenHelper {
         return list_phongban;
     }
 
-    public void insert(PhongBan phongban){
+    public long insert(PhongBan phongban){
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -97,6 +98,6 @@ public class PhongBanDatabase extends SQLiteOpenHelper {
         values.put(PhongBanDatabase.COLUMN_TENPB, phongban.getTenpb());
 
         // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(PhongBanDatabase.TABLE_NAME, null, values);
+        return db.insert(PhongBanDatabase.TABLE_NAME, null, values);
     }
 }

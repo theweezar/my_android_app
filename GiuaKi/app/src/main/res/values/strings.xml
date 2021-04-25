@@ -11,4 +11,22 @@
     <string name="id">ID</string>
     <string name="thong_tin">Thông tin</string>
     <string name="reload">Tải danh sách</string>
+    <string name="insert_nhanvien_title">Thêm nhân viên</string>
+    <string name="manv_title">Mã nhân viên</string>
+    <string name="back_btn">Quay lại</string>
+    <string name="insert_btn">Thêm</string>
+    <string name="hoten_title">Họ và tên</string>
+    <string name="ngaysinh_title">Ngày sinh: dd/mm/yyyy</string>
+    <string name="phongban_title">Phòng ban</string>
+    <string name="insert_phongban_title">Thêm phòng ban</string>
+    <string name="mapb_title">Mã phòng ban</string>
+    <string name="tenpb_title">Tên phòng ban</string>
+    <string name="my_birthday">30/10/1999</string>
+    <string name="insert_vpp_title">Thêm văn phòng phẩm</string>
+    <string name="mavpp_title">Mã văn phòng phẩm</string>
+    <string name="tenvpp_title">Tên văn phòng phẩm</string>
+    <string name="dvt_title">Đơn vị tính</string>
+    <string name="gianhap_title">Giá nhập</string>
+    <string name="hinh_title">Hình</string>
+    <string name="todo">TODO</string>
 </resources>

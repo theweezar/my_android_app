@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InsertNhanVienActivity"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insert_nhanvien_title"
+        android:textSize="30sp"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/manv_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="7dp"
+        android:background="@drawable/border_black_rectangle_radius_no_focus"
+        android:hint="@string/manv_title"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/hoten_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="7dp"
+        android:background="@drawable/border_black_rectangle_radius_no_focus"
+        android:hint="@string/hoten_title"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/ngaysinh_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="7dp"
+        android:background="@drawable/border_black_rectangle_radius_no_focus"
+        android:hint="@string/ngaysinh_title"
+        android:autofillHints="@string/my_birthday"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="7dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phongban_title"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <Spinner
+            android:id="@+id/phongban_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        tools:ignore="RtlHardcoded">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/back_btn"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/insert_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_btn"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

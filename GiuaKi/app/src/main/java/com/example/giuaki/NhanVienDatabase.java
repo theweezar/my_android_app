@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
     private static final String TAG = "SQLite";
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     // Database Name
     private static final String DATABASE_NAME = "GiuaKi";
@@ -25,7 +26,7 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
     public static final String COLUMN_MANV ="MANV";
     public static final String COLUMN_HOTEN = "HOTEN";
     public static final String COLUMN_NGAYSINH = "NGAYSINH";
-    public static final String COLUMN_MAPB = "MAPB";
+    public static final String COLUMN_IDPB = "IDPB";
 
     public NhanVienDatabase(Context context)  {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,8 +39,8 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                 + COLUMN_MANV + " TEXT NOT NULL UNIQUE,"
                 + COLUMN_HOTEN + " TEXT NOT NULL,"
-                + COLUMN_NGAYSINH + "TEXT NOT NULL,"
-                + COLUMN_MAPB + "TEXT NOT NULL)";
+                + COLUMN_NGAYSINH + " TEXT NOT NULL,"
+                + COLUMN_IDPB + " INTEGER NOT NULL)";
         // Execute script.
         db.execSQL(script);
     }
@@ -52,7 +53,7 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insert(NhanVien nhanvien){
+    public long insert(NhanVien nhanvien){
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -61,10 +62,10 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
         values.put(COLUMN_MANV, nhanvien.getMaNv());
         values.put(COLUMN_HOTEN, nhanvien.getHoTen());
         values.put(COLUMN_NGAYSINH, nhanvien.getNgaySinh());
-        values.put(COLUMN_MAPB, nhanvien.getMaPb());
+        values.put(COLUMN_IDPB, nhanvien.getIdPb());
 
         // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(TABLE_NAME, null, values);
+        return db.insert(TABLE_NAME, null, values);
     }
 
     public List<NhanVien> select(){
@@ -77,7 +78,7 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
                 COLUMN_MANV,
                 COLUMN_HOTEN,
                 COLUMN_NGAYSINH,
-                COLUMN_MAPB
+                COLUMN_IDPB
         };
 
         // How you want the results sorted in the resulting Cursor
@@ -101,7 +102,7 @@ public class NhanVienDatabase extends SQLiteOpenHelper {
                     cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
-                    cursor.getString(4)
+                    cursor.getLong(4)
             ));
         }
 

@@ -6,14 +6,21 @@ public class NhanVien {
     private String maNv;
     private String hoTen;
     private String ngaySinh;
-    private String maPb;
+    private long idPb;
 
-    public NhanVien(long id, String maNv, String hoTen, String ngaySinh, String maPb) {
+    public NhanVien(String maNv, String hoTen, String ngaySinh, long idPb) {
+        this.maNv = maNv;
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.idPb = idPb;
+    }
+
+    public NhanVien(long id, String maNv, String hoTen, String ngaySinh, long idPb) {
         this.id = id;
         this.maNv = maNv;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
-        this.maPb = maPb;
+        this.idPb = idPb;
     }
 
     public long getId() {
@@ -48,11 +55,22 @@ public class NhanVien {
         this.ngaySinh = ngaySinh;
     }
 
-    public String getMaPb() {
-        return maPb;
+    public long getIdPb() {
+        return idPb;
     }
 
-    public void setMaPb(String maPb) {
-        this.maPb = maPb;
+    public void setIdPb(long idPb) {
+        this.idPb = idPb;
+    }
+
+    @Override
+    public String toString() {
+        return "NhanVien{" +
+                "id=" + id +
+                ", maNv='" + maNv + '\'' +
+                ", hoTen='" + hoTen + '\'' +
+                ", ngaySinh='" + ngaySinh + '\'' +
+                ", idPb=" + idPb +
+                '}';
     }
 }
