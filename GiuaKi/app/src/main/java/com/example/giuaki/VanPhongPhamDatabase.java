@@ -16,7 +16,7 @@ public class VanPhongPhamDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "GiuaKi";
+    private static final String DATABASE_NAME = "GiuaKi.db";
 
     // Table name: Note.
     private static final String TABLE_NAME = "VANPHONGPHAM";

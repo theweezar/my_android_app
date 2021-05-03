@@ -16,7 +16,7 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "GiuaKi";
+    private static final String DATABASE_NAME = "GiuaKi.db";
 
     // Table name: Note.
     private static final String TABLE_NAME = "CAPPHAT";
@@ -24,8 +24,8 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
     public static final String COLUMN_ID ="ID";
     public static final String COLUMN_SOPHIEU ="SOPHIEU";
     public static final String COLUMN_NGAYCAP = "NGAYCAP";
-    public static final String COLUMN_MAVPP = "MAVPP";
-    public static final String COLUMN_MANV = "MANV";
+    public static final String COLUMN_IDVPP = "IDVPP";
+    public static final String COLUMN_IDNV = "IDNV";
     public static final String COLUMN_SOLUONG = "SOLUONG";
 
     public CapPhatDatabase(Context context)  {
@@ -39,9 +39,9 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                 + COLUMN_SOPHIEU + " TEXT NOT NULL UNIQUE,"
                 + COLUMN_NGAYCAP + " TEXT NOT NULL,"
-                + COLUMN_MAVPP + "TEXT NOT NULL,"
-                + COLUMN_MANV + "TEXT NOT NULL,"
-                + COLUMN_SOLUONG + "INTEGER NOT NULL)";
+                + COLUMN_IDVPP + "INTEGER NOT NULL,"
+                + COLUMN_IDNV + " INTEGER NOT NULL,"
+                + COLUMN_SOLUONG + " INTEGER NOT NULL)";
         // Execute script.
         db.execSQL(script);
     }
@@ -54,7 +54,7 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insert(CapPhat capPhat){
+    public long insert(CapPhat capPhat){
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -62,12 +62,12 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(COLUMN_SOPHIEU, capPhat.getSoPhieu());
         values.put(COLUMN_NGAYCAP, capPhat.getNgayCap());
-        values.put(COLUMN_MAVPP, capPhat.getMaVpp());
-        values.put(COLUMN_MANV, capPhat.getMaNv());
+        values.put(COLUMN_IDVPP, capPhat.getIdVpp());
+        values.put(COLUMN_IDNV, capPhat.getIdNv());
         values.put(COLUMN_SOLUONG, capPhat.getSl());
 
         // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(TABLE_NAME, null, values);
+        return db.insert(TABLE_NAME, null, values);
     }
 
     public List<CapPhat> select(){
@@ -79,8 +79,8 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
                 COLUMN_ID,
                 COLUMN_SOPHIEU,
                 COLUMN_NGAYCAP,
-                COLUMN_MAVPP,
-                COLUMN_MANV,
+                COLUMN_IDVPP,
+                COLUMN_IDNV,
                 COLUMN_SOLUONG
         };
 
@@ -104,8 +104,8 @@ public class CapPhatDatabase extends SQLiteOpenHelper {
                     cursor.getLong(0),
                     cursor.getString(1),
                     cursor.getString(2),
-                    cursor.getString(3),
-                    cursor.getString(4),
+                    cursor.getLong(3),
+                    cursor.getLong(4),
                     cursor.getLong(5)
             ));
         }

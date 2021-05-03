@@ -5,16 +5,24 @@ public class CapPhat {
     private long id;
     private String soPhieu;
     private String ngayCap;
-    private String maVpp;
-    private String maNv;
+    private long idVpp;
+    private long idNv;
     private long sl;
 
-    public CapPhat(long id, String soPhieu, String ngayCap, String maVpp, String maNv, long sl) {
+    public CapPhat(String soPhieu, String ngayCap, long idVpp, long idNv, long sl) {
+        this.soPhieu = soPhieu;
+        this.ngayCap = ngayCap;
+        this.idVpp = idVpp;
+        this.idNv = idNv;
+        this.sl = sl;
+    }
+
+    public CapPhat(long id, String soPhieu, String ngayCap, long idVpp, long idNv, long sl) {
         this.id = id;
         this.soPhieu = soPhieu;
         this.ngayCap = ngayCap;
-        this.maVpp = maVpp;
-        this.maNv = maNv;
+        this.idVpp = idVpp;
+        this.idNv = idNv;
         this.sl = sl;
     }
 
@@ -42,20 +50,20 @@ public class CapPhat {
         this.ngayCap = ngayCap;
     }
 
-    public String getMaVpp() {
-        return maVpp;
+    public long getIdVpp() {
+        return idVpp;
     }
 
-    public void setMaVpp(String maVpp) {
-        this.maVpp = maVpp;
+    public void setIdVpp(long idVpp) {
+        this.idVpp = idVpp;
     }
 
-    public String getMaNv() {
-        return maNv;
+    public long getIdNv() {
+        return idNv;
     }
 
-    public void setMaNv(String maNv) {
-        this.maNv = maNv;
+    public void setIdNv(long idNv) {
+        this.idNv = idNv;
     }
 
     public long getSl() {
