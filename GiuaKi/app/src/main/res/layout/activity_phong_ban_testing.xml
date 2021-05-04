@@ -84,9 +84,10 @@
                     android:text="@string/thong_tin" />
             </TableRow>
 
-
-
         </TableLayout>
+
+
+
     </LinearLayout>
 
 

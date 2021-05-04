@@ -29,4 +29,6 @@
     <string name="gianhap_title">Giá nhập</string>
     <string name="hinh_title">Hình</string>
     <string name="todo">TODO</string>
+    <string name="list_vpp_btn">Danh sách văn phòng phẩm</string>
+    <string name="ten_vpp_title">Tên VPP</string>
 </resources>

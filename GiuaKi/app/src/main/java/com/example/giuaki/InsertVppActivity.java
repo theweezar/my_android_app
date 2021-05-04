@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class InsertVppActivity extends AppCompatActivity {
 
@@ -29,6 +33,8 @@ public class InsertVppActivity extends AppCompatActivity {
     int IMAGE_FOLDER = 1000;
     int PERMISSION_GRANTED = 1001;
 
+    VanPhongPhamDatabase vppdb = new VanPhongPhamDatabase(InsertVppActivity.this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,7 @@ public class InsertVppActivity extends AppCompatActivity {
         setControl();
         setEventForBackButton();
         setEventForImage();
+        setEventForInsertButton();
     }
 
     public void setControl(){
@@ -104,5 +111,52 @@ public class InsertVppActivity extends AppCompatActivity {
             Toast.makeText(InsertVppActivity.this,"Thêm hình thành công", Toast.LENGTH_SHORT).show();
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void setEventForInsertButton(){
+        insert_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String maVpp = mavpp_input.getText().toString().trim();
+                String tenVpp = tenvpp_input.getText().toString().trim();
+                String dvt = dvt_input.getText().toString().trim();
+                String giaNhap = gianhap_input.getText().toString().trim();
+                byte[] byte_hinh = null;
+                try {
+                    Bitmap bitmap = ((BitmapDrawable) hinh_input.getDrawable()).getBitmap();
+                    if (bitmap != null){
+                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                        byte_hinh = byteArrayOutputStream.toByteArray();
+                        byteArrayOutputStream.close();
+                    }
+                }
+                catch (IOException e){
+                    Toast.makeText(InsertVppActivity.this,"setEventForInsertButton() failed image processing",
+                            Toast.LENGTH_SHORT).show();
+                }
+                if (maVpp.isEmpty()){
+                    Toast.makeText(InsertVppActivity.this,"Nhập mã vpp",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if (tenVpp.isEmpty()){
+                    Toast.makeText(InsertVppActivity.this,"Nhập tên vpp",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if (dvt.isEmpty()){
+                    Toast.makeText(InsertVppActivity.this,"Nhập đơn vị tính",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if (giaNhap.isEmpty()){
+                    Toast.makeText(InsertVppActivity.this,"Nhập giá tiền",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    long newId = vppdb.insert(new VanPhongPham(maVpp, tenVpp, dvt, giaNhap, byte_hinh));
+                    Toast.makeText(InsertVppActivity.this,"Thêm văn phòng phẩm với id " + newId,
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

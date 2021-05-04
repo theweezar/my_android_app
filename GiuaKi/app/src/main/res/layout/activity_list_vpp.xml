@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListVppActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/reload_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reload"/>
+
+        <TableLayout
+            android:id="@+id/list_vpp_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+
+            <TableRow tools:ignore="UselessParent">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/tenvpp_title"
+                   android:textSize="20sp"
+                   android:textColor="@color/black"
+                   android:padding="5dp"
+                   android:background="@drawable/border_black_shape_rectangle_noradius"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dvt_title"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:padding="5dp"
+                    android:background="@drawable/border_black_shape_rectangle_noradius"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gianhap_title"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:padding="5dp"
+                    android:background="@drawable/border_black_shape_rectangle_noradius"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/preview_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO" />
+
+    </LinearLayout>
+
+</ScrollView>

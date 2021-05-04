@@ -18,6 +18,14 @@ public class VanPhongPham {
         this.hinh = hinh;
     }
 
+    public VanPhongPham(String maVpp, String tenVpp, String dvt, String giaNhap, byte[] hinh) {
+        this.maVpp = maVpp;
+        this.tenVpp = tenVpp;
+        this.dvt = dvt;
+        this.giaNhap = giaNhap;
+        this.hinh = hinh;
+    }
+
     public long getId() {
         return id;
     }

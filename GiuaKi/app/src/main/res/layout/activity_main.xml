@@ -28,6 +28,12 @@
         android:text="@string/van_phong_pham_btn" />
 
     <Button
+        android:id="@+id/list_vpp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_vpp_btn" />
+
+    <Button
         android:id="@+id/phieucapphat_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

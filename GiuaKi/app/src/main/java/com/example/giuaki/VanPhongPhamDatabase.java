@@ -13,7 +13,7 @@ public class VanPhongPhamDatabase extends SQLiteOpenHelper {
     private static final String TAG = "SQLite";
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database Name
     private static final String DATABASE_NAME = "GiuaKi.db";
@@ -39,9 +39,9 @@ public class VanPhongPhamDatabase extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
                 + COLUMN_MAVPP + " TEXT NOT NULL UNIQUE,"
                 + COLUMN_TENVPP + " TEXT NOT NULL,"
-                + COLUMN_DVT + "TEXT NOT NULL,"
-                + COLUMN_GIANHAP + "TEXT NOT NULL,"
-                + COLUMN_HINH + "BLOB)";
+                + COLUMN_DVT + " TEXT NOT NULL,"
+                + COLUMN_GIANHAP + " TEXT NOT NULL,"
+                + COLUMN_HINH + " BLOB)";
         // Execute script.
         db.execSQL(script);
     }
@@ -54,7 +54,16 @@ public class VanPhongPhamDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insert(VanPhongPham vanPhongPham){
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        super.onDowngrade(db, oldVersion, newVersion);
+        // Drop table
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        // Recreate
+        onCreate(db);
+    }
+
+    public long insert(VanPhongPham vanPhongPham){
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -67,7 +76,7 @@ public class VanPhongPhamDatabase extends SQLiteOpenHelper {
         values.put(COLUMN_HINH, vanPhongPham.getHinh());
 
         // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(TABLE_NAME, null, values);
+        return db.insert(TABLE_NAME, null, values);
     }
 
     public List<VanPhongPham> select(){

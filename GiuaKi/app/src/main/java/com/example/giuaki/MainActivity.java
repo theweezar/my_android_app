@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button phongban_btn;
     Button nhanvien_btn;
     Button vanphongpham_btn;
+    Button list_vpp_btn;
     Button phieucapphat_btn;
 
     @Override
@@ -22,12 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setEventPhongBan();
         setEventNhanVien();
         setEventVanPhongPham();
+        setEventForListVPPBtn();
     }
 
     public void setControl(){
         phongban_btn = findViewById(R.id.phongban_btn);
         nhanvien_btn = findViewById(R.id.nhanvien_btn);
         vanphongpham_btn = findViewById(R.id.vanphongpham_btn);
+        list_vpp_btn = findViewById(R.id.list_vpp_btn);
         phieucapphat_btn = findViewById(R.id.phieucapphat_btn);
     }
 
@@ -56,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, InsertVppActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void setEventForListVPPBtn(){
+        list_vpp_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListVppActivity.class);
                 startActivity(intent);
             }
         });
