@@ -12,17 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Test">
-        <activity android:name=".quocgia_main">
+        <activity android:name=".load_image_from_uri.LoadImageUriActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ToggleButton_Test">
-
-        </activity>
+        <activity android:name=".ToggleButton_Test"></activity>
         <activity android:name=".TestUrlConnection" />
         <activity android:name=".ChecBox_Demo" />
     </application>
