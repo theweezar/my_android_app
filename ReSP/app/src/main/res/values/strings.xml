@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ReSP</string>
+    <string name="drinkTitle">Drink</string>
+    <string name="insertedTitle">Inserted</string>
+    <string name="insertedQuantity">5</string>
+    <string name="stoppedTitle">Stopped</string>
+    <string name="stoppedQuantity">2</string>
+    <string name="sortBtn">Sort by</string>
+    <string name="alphabet_mode">Alphabet</string>
+    <string name="date_mode">Date</string>
+    <string name="order_radio_title">Order</string>
+    <string name="asc_order">Ascending</string>
+    <string name="desc_order">Descending</string>
+    <string name="type_url_to_perform_http_request">Type URL to perform HTTP Request</string>
+    <string name="submit">Submit</string>
+    <string name="ip_address">IP Address</string>
+    <string name="url">Url</string>
+    <string name="get">GET</string>
+    <string name="post">POST</string>
+    <string name="method">Method</string>
+    <string name="host">Host</string>
+    <string name="route">Route</string>
+    <string name="account">Account: </string>
+    <string name="login">Login</string>
+    <string name="result">Result</string>
+    <string name="port">Port</string>
+    <string name="port_ex_8000">Port. Ex: 8000</string>
+    <string name="email_input">Email</string>
+    <string name="password_input">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string-array name="sort_mode">
+        <item>Alphabet</item>
+        <item>Date</item>
+    </string-array>
+    <string-array name="sort_order">
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+</resources>
