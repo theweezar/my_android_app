@@ -28,6 +28,8 @@
     <string name="email_input">Email</string>
     <string name="password_input">Password</string>
     <string name="remember_me">Remember me</string>
+    <string name="mapb">MAPB</string>
+    <string name="tenpb">TENPB</string>
     <string-array name="sort_mode">
         <item>Alphabet</item>
         <item>Date</item>

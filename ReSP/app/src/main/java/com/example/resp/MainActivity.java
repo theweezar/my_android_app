@@ -3,20 +3,14 @@ package com.example.resp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
@@ -44,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         host_input = (EditText)findViewById(R.id.host_input);
         method_input = (RadioGroup) findViewById(R.id.method_input);
         submit_btn = (Button) findViewById(R.id.submit_login_btn);
-        result_view = (TextView)findViewById(R.id.result);
+        result_view = (TextView)findViewById(R.id.result_view);
     }
 
     public void setHttpRequestAction(){
@@ -63,14 +57,9 @@ public class MainActivity extends AppCompatActivity {
                     String result = "";
                     if (method_id == R.id.method_get){
                         try {
-                            result = new FetchHelper().execute(String.format("http://%s", host)).get();
+                            String[] request = {"GET", String.format("http://%s", host)};
+                            result = new RequestHelper().execute(request).get();
                             result_view.setTextColor(getResources().getColor(R.color.result_1));
-                            try{
-                                result = parseJSON(result);
-                            }
-                            catch(JSONException e){
-                                e.printStackTrace();
-                            }
                             result_view.setText(result);
                         }
                         catch(ExecutionException e){
@@ -86,12 +75,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public String parseJSON(String json) throws JSONException {
-        String result = "";
-        JSONObject jsonObject = new JSONObject(json);
-        jsonObject.get
-        return result;
     }
 }
