@@ -2,6 +2,7 @@ package com.example.resp.helpers;
 
 import com.example.resp.entites.CapPhat;
 import com.example.resp.entites.NhanVien;
+import com.example.resp.entites.PhieuCungCap;
 import com.example.resp.entites.PhongBan;
 import com.example.resp.entites.VanPhongPham;
 
@@ -22,7 +23,7 @@ public class JSONHelper {
         try {
             JSONObject jsonObj = new JSONObject(json);
             if (jsonObj.has("error")) {
-                return jsonObj.getString("message");
+                return jsonObj.get("message").toString();
             }
         }
         catch (JSONException error) {
@@ -47,8 +48,10 @@ public class JSONHelper {
 
         if (objectName.trim().equals("PhongBan")) {
             for(int i = 0; i < viewData.length(); i++) {
-                PhongBan phongBan = new PhongBan(viewData.getJSONObject(i).getString("MAPB"),
-                        viewData.getJSONObject(i).getString("TENPB"));
+                PhongBan phongBan = new PhongBan(
+                        viewData.getJSONObject(i).get("MAPB").toString(),
+                        viewData.getJSONObject(i).get("TENPB").toString()
+                );
                 entitiesList.add(phongBan);
             }
         }
@@ -56,10 +59,10 @@ public class JSONHelper {
         if (objectName.trim().equals("NhanVien")) {
             for(int i = 0; i < viewData.length(); i++) {
                 NhanVien nhanVien = new NhanVien(
-                        viewData.getJSONObject(i).getString("MANV"),
-                        viewData.getJSONObject(i).getString("HOTEN"),
-                        viewData.getJSONObject(i).getString("NGAYSINH"),
-                        viewData.getJSONObject(i).getString("MAPB")
+                        viewData.getJSONObject(i).get("MANV").toString(),
+                        viewData.getJSONObject(i).get("HOTEN").toString(),
+                        viewData.getJSONObject(i).get("NGAYSINH").toString(),
+                        viewData.getJSONObject(i).get("MAPB").toString()
                 );
                 entitiesList.add(nhanVien);
             }
@@ -68,13 +71,13 @@ public class JSONHelper {
         if (objectName.trim().equals("VanPhongPham")) {
             for(int i = 0; i < viewData.length(); i++) {
                 VanPhongPham vanPhongPham = new VanPhongPham(
-                        viewData.getJSONObject(i).getString("MAVPP"),
-                        viewData.getJSONObject(i).getString("TENVPP"),
-                        viewData.getJSONObject(i).getString("DVT"),
-                        viewData.getJSONObject(i).getString("GIANHAP"),
+                        viewData.getJSONObject(i).get("MAVPP").toString(),
+                        viewData.getJSONObject(i).get("TENVPP").toString(),
+                        viewData.getJSONObject(i).get("DVT").toString(),
+                        viewData.getJSONObject(i).get("GIANHAP").toString(),
                         viewData.getJSONObject(i).get("HINH").toString(),
                         viewData.getJSONObject(i).getInt("SOLUONG"),
-                        viewData.getJSONObject(i).getString("MANCC")
+                        viewData.getJSONObject(i).get("MANCC").toString()
                 );
                 entitiesList.add(vanPhongPham);
             }
@@ -83,11 +86,11 @@ public class JSONHelper {
         if (objectName.trim().equals("CapPhat")) {
             for(int i = 0; i < viewData.length(); i++) {
                 CapPhat capPhat = new CapPhat(
-                        viewData.getJSONObject(i).getString("SOPHIEU"),
-                        viewData.getJSONObject(i).getString("NGAYCAP"),
-                        viewData.getJSONObject(i).getString("MAVPP"),
-                        viewData.getJSONObject(i).getString("MANV"),
-                        (long)viewData.getJSONObject(i).getInt("SOLUONG")
+                        viewData.getJSONObject(i).get("SOPHIEU").toString(),
+                        viewData.getJSONObject(i).get("NGAYCAP").toString(),
+                        viewData.getJSONObject(i).get("MAVPP").toString(),
+                        viewData.getJSONObject(i).get("MANV").toString(),
+                        viewData.getJSONObject(i).get("SOLUONG").toString()
                 );
                 entitiesList.add(capPhat);
             }
@@ -98,7 +101,14 @@ public class JSONHelper {
         }
 
         if (objectName.trim().equals("PhieuCungCap")) {
-
+            for(int i = 0; i < viewData.length(); i++) {
+                PhieuCungCap phieuCungCap = new PhieuCungCap(
+                        viewData.getJSONObject(i).get("SOPHIEU").toString(),
+                        viewData.getJSONObject(i).get("TRANGTHAI").toString(),
+                        viewData.getJSONObject(i).get("MANCC").toString()
+                );
+                entitiesList.add(phieuCungCap);
+            }
         }
 
         return entitiesList;
