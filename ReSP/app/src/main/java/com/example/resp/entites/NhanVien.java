@@ -1,4 +1,4 @@
-package com.example.resp;
+package com.example.resp.entites;
 
 public class NhanVien {
 

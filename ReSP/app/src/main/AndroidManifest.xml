@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReSP">
-        <activity android:name=".TestPostRequest">
+        <activity android:name=".requests.TestPostRequest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
