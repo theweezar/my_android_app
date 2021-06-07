@@ -76,7 +76,7 @@ public class JSONHelper {
                         viewData.getJSONObject(i).get("DVT").toString(),
                         viewData.getJSONObject(i).get("GIANHAP").toString(),
                         viewData.getJSONObject(i).get("HINH").toString(),
-                        viewData.getJSONObject(i).getInt("SOLUONG"),
+                        viewData.getJSONObject(i).get("SOLUONG").toString(),
                         viewData.getJSONObject(i).get("MANCC").toString()
                 );
                 entitiesList.add(vanPhongPham);

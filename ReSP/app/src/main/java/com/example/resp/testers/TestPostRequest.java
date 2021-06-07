@@ -1,4 +1,4 @@
-package com.example.resp.requests;
+package com.example.resp.testers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +34,7 @@ public class TestPostRequest extends AppCompatActivity {
     public void setControll() {
         mapb_input = (EditText)findViewById(R.id.mapb);
         tenpb_input = (EditText)findViewById(R.id.tenpb);
-        submit = (Button)findViewById(R.id.submit);
+        submit = (Button)findViewById(R.id.submit_btn);
     }
 
     public void setEvent() {

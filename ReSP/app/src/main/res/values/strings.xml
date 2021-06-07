@@ -30,6 +30,15 @@
     <string name="remember_me">Remember me</string>
     <string name="mapb">MAPB</string>
     <string name="tenpb">TENPB</string>
+    <string name="mavpp">MAVPP</string>
+    <string name="tenvpp">TENVPP</string>
+    <string name="dvt">DVT</string>
+    <string name="gianhap">GIANHAP</string>
+    <string name="soluong">SOLUONG</string>
+    <string name="mancc">MANCC</string>
+    <string name="hinh">HINH</string>
+    <string name="upload">UPLOAD</string>
+    <string name="todo">TODO</string>
     <string-array name="sort_mode">
         <item>Alphabet</item>
         <item>Date</item>
